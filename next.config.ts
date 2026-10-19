@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   experimental: {
     optimizePackageImports: ["@phosphor-icons/react", "@phosphor-icons/react/ssr"],
+    // Hostinger counts threads against the account's process limit (shared by every site), and sharp would otherwise
+    // start half the server's cores worth of threads per process.
+    imgOptConcurrency: 1,
   },
   async headers() {
     return [{ source: "/:path*", headers: [...securityHeaders] }];
