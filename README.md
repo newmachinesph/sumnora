@@ -24,8 +24,11 @@ Requires Node.js 20.9 or later.
 
 ```bash
 npm install
+cp .env.example .env.local
 npm run dev        # http://localhost:3000
 ```
+
+The only environment variable is `NEXT_PUBLIC_GA_MEASUREMENT_ID`, the Google Analytics 4 measurement ID. Next.js inlines it at build time, so set it in the host's build environment as well. If it is unset, analytics is off.
 
 | Script | What it does |
 | --- | --- |
@@ -86,7 +89,7 @@ Pages are assembled from the primitives in `src/components/`: `PageHero`, `Secti
 
 ## Privacy, security, and SEO
 
-- **Consent-gated analytics.** The Google Analytics tag is not rendered at all until the visitor accepts the analytics category. Withdrawing consent unmounts the tag, clears the `_ga*` cookies, and sets `ga-disable-<id>` so that a tag already in memory stops sending immediately. Analytics only runs in production builds. See `src/components/analytics.tsx`.
+- **Consent-gated analytics.** The Google Analytics tag is not rendered at all until the visitor accepts the analytics category. Withdrawing consent unmounts the tag, clears the `_ga*` cookies, and sets `ga-disable-<id>` so that a tag already in memory stops sending immediately. Analytics only runs in production builds where `NEXT_PUBLIC_GA_MEASUREMENT_ID` is set. See `src/components/analytics.tsx`.
 - **Security headers.** HSTS (preload), `nosniff`, `X-Frame-Options: DENY`, a strict referrer policy, and a restrictive `Permissions-Policy` are set for every path in `next.config.ts`. The `X-Powered-By` header is turned off.
 - **SEO.** Each page gets canonical URLs, Open Graph and Twitter cards, and JSON-LD from `createPageMetadata()`. The site also generates a sitemap, robots rules, and a web app manifest.
 

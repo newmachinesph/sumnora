@@ -310,11 +310,13 @@ export const nav = [
 export const CONTACT_EMAIL = "hello@sumnora.com";
 
 /**
- * GA4 measurement ID. Public by design — it ships in the page source of every
- * site that uses it, so it is not a secret. Loaded only after the visitor
- * accepts the analytics category; see `components/analytics.tsx`.
+ * GA4 measurement ID, from `NEXT_PUBLIC_GA_MEASUREMENT_ID`. Next inlines it at
+ * build time, so it must be set in the build environment. Public by design —
+ * it ships in the page source — so it is configuration, not a secret. Unset
+ * means analytics is off. Loaded only after the visitor accepts the analytics
+ * category; see `components/analytics.tsx`.
  */
-export const GA_MEASUREMENT_ID = "G-5HP8RZ1KEC";
+export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 /**
  * Meta (Facebook) domain verification token. Public by design: it must be

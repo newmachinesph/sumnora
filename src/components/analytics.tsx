@@ -20,7 +20,7 @@ import { GA_MEASUREMENT_ID } from "@/lib/site-data";
  * `ga-disable-<id>` flag, which stops them immediately.
  *
  * Only runs in production builds, so local development does not land in the
- * reporting property.
+ * reporting property, and only when `NEXT_PUBLIC_GA_MEASUREMENT_ID` is set.
  */
 export function Analytics() {
   const [analyticsAllowed, setAnalyticsAllowed] = useState(false);
@@ -30,7 +30,9 @@ export function Analytics() {
       const allowed = CookieConsent.acceptedCategory("analytics");
       // Set before the state update so a withdrawal takes effect on this page
       // view rather than the next one.
-      (window as unknown as Record<string, boolean>)[`ga-disable-${GA_MEASUREMENT_ID}`] = !allowed;
+      if (GA_MEASUREMENT_ID) {
+        (window as unknown as Record<string, boolean>)[`ga-disable-${GA_MEASUREMENT_ID}`] = !allowed;
+      }
       setAnalyticsAllowed(allowed);
     };
 
@@ -46,7 +48,7 @@ export function Analytics() {
     };
   }, []);
 
-  if (!analyticsAllowed || process.env.NODE_ENV !== "production") return null;
+  if (!GA_MEASUREMENT_ID || !analyticsAllowed || process.env.NODE_ENV !== "production") return null;
 
   return <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />;
 }
