@@ -6,7 +6,7 @@ export const SITE_LOCALE = "en_PH";
 export const SITE_LANGUAGE = "en-PH";
 export const SITE_DESCRIPTION =
   "Sumnora is an AI-native software development boutique. We design, build, and ship production web, mobile, and AI products for teams that need senior engineering judgment.";
-export const SITE_LAST_UPDATED = "2026-08-08";
+export const SITE_LAST_UPDATED = "2026-10-22";
 export const OPEN_GRAPH_IMAGE = `${SITE_URL}/opengraph-image`;
 export const TWITTER_IMAGE = `${SITE_URL}/twitter-image`;
 export const OPEN_GRAPH_IMAGE_ALT = "Sumnora — Built for the work";

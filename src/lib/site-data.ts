@@ -299,7 +299,51 @@ export const principles = [
   },
 ] as const;
 
+export const caseStudies = [
+  {
+    slug: "kainna",
+    name: "Kain Na!",
+    url: "https://kainna.ph",
+    facebook: "https://www.facebook.com/kainnarecipes",
+    category: "Consumer web app",
+    headline: "A seat at the table for every ulam.",
+    summary:
+      "Kain Na! helps Filipino households decide what to cook: browse 1,700 dishes, plan a week of meals inside a daily budget, and take one market list to the palengke.",
+    stack: ["Next.js", "MySQL", "Cloudflare R2", "Hostinger"],
+    facts: [
+      ["1,700", "dishes with photos"],
+      ["7 days", "planned against a budget"],
+      ["1 app", "web, API, and admin"],
+    ],
+    highlights: [
+      {
+        title: "A collection people actually browse",
+        text: "Every dish has its own photo, category, and recipe page, searchable by name and served from a CDN so the catalog stays fast on mobile data.",
+      },
+      {
+        title: "Meal plans that respect a budget",
+        text: "Households set how many people they feed and what they can spend a day. The week is planned around it, with leftovers carried into the next day's dish.",
+      },
+      {
+        title: "One list for the palengke",
+        text: "The plan becomes a market list grouped by stall, priced from current ingredient costs that the team updates from an admin screen.",
+      },
+      {
+        title: "Shared by the whole household",
+        text: "An owner invites family members, and the plan, saved dishes, and market list stay in sync across everyone's phones.",
+      },
+    ],
+    images: {
+      hero: { src: "/work/kainna/home.webp", width: 2880, height: 1800, alt: "Kain Na! home page with the headline “A seat at the table for every ulam.”" },
+      recipes: { src: "/work/kainna/recipes.webp", width: 2880, height: 1800, alt: "Kain Na! food collection with category filters and dish photos" },
+      plan: { src: "/work/kainna/plan.webp", width: 2880, height: 1800, alt: "A weekly meal plan with a budget bar and a market list grouped by stall" },
+      mobile: { src: "/work/kainna/mobile.webp", width: 1170, height: 2532, alt: "The Adobong Manok recipe page on a phone, with price per person and cooking time" },
+    },
+  },
+] as const;
+
 export const nav = [
+  { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
   { label: "Approach", href: "/approach" },
   { label: "Solutions", href: "/solutions" },

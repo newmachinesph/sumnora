@@ -9,6 +9,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: SITE_LAST_UPDATED,
       images: [`${SITE_URL}/brand/engineering-sculpture.webp`],
     },
+    {
+      url: `${SITE_URL}/work`,
+      lastModified: SITE_LAST_UPDATED,
+      images: [`${SITE_URL}/work/kainna/home.webp`, `${SITE_URL}/work/kainna/plan.webp`],
+    },
     { url: `${SITE_URL}/services`, lastModified: SITE_LAST_UPDATED },
     { url: `${SITE_URL}/approach`, lastModified: SITE_LAST_UPDATED },
     { url: `${SITE_URL}/solutions`, lastModified: SITE_LAST_UPDATED },

@@ -7,7 +7,7 @@ import { AssuranceMotion, HeroMotionOverlay, ProductMotionShowcase } from "@/com
 import { JsonLd } from "@/components/json-ld";
 import { Reveal } from "@/components/motion";
 import { SectionHeading } from "@/components/section-heading";
-import { CONTACT_EMAIL, services } from "@/lib/site-data";
+import { CONTACT_EMAIL, caseStudies, services } from "@/lib/site-data";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 const organizationJsonLd = {
@@ -46,6 +46,8 @@ const organizationJsonLd = {
     },
   ],
 };
+
+const [kainna] = caseStudies;
 
 export default function Home() {
   return (
@@ -99,6 +101,23 @@ export default function Home() {
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="home-work section-shell">
+        <Reveal className="home-work-copy">
+          <span className="section-kicker">Selected work · {kainna.category}</span>
+          <h2>{kainna.name}</h2>
+          <p>{kainna.summary}</p>
+          <div>
+            <Link href="/work">Read the case study <ArrowUpRightIcon aria-hidden="true" size={16} weight="regular" /></Link>
+            <a href={kainna.url} rel="noopener" target="_blank">Visit {kainna.url.replace("https://", "")} <ArrowUpRightIcon aria-hidden="true" size={16} weight="regular" /></a>
+          </div>
+        </Reveal>
+        <Reveal className="home-work-image" delay={0.08}>
+          <Link aria-label={`${kainna.name} case study`} href="/work">
+            <Image {...kainna.images.hero} sizes="(max-width: 1100px) calc(100vw - 48px), 60vw" />
+          </Link>
+        </Reveal>
       </section>
 
       <section className="home-founder-story">
