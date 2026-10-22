@@ -306,6 +306,8 @@ export const caseStudies = [
     url: "https://kainna.ph",
     facebook: "https://www.facebook.com/kainnarecipes",
     category: "Consumer web app",
+    metaDescription:
+      "Kain Na! case study: a Filipino recipe and meal-planning app with 1,700 dishes, budget-aware weekly plans, and one market list, built and run by Sumnora.",
     headline: "A seat at the table for every ulam.",
     summary:
       "Kain Na! helps Filipino households decide what to cook: browse 1,700 dishes, plan a week of meals inside a daily budget, and take one market list to the palengke.",
@@ -335,9 +337,51 @@ export const caseStudies = [
     ],
     images: {
       hero: { src: "/work/kainna/home.webp", width: 2880, height: 1800, alt: "Kain Na! home page with the headline “A seat at the table for every ulam.”" },
-      recipes: { src: "/work/kainna/recipes.webp", width: 2880, height: 1800, alt: "Kain Na! food collection with category filters and dish photos" },
-      plan: { src: "/work/kainna/plan.webp", width: 2880, height: 1800, alt: "A weekly meal plan with a budget bar and a market list grouped by stall" },
+      gallery: { src: "/work/kainna/recipes.webp", width: 2880, height: 1800, alt: "Kain Na! food collection with category filters and dish photos" },
+      feature: { src: "/work/kainna/plan.webp", width: 2880, height: 1800, alt: "A weekly meal plan with a budget bar and a market list grouped by stall" },
       mobile: { src: "/work/kainna/mobile.webp", width: 1170, height: 2532, alt: "The Adobong Manok recipe page on a phone, with price per person and cooking time" },
+    },
+  },
+  {
+    slug: "larongpinoy",
+    name: "LarongPinoy",
+    url: "https://larongpinoy.ph",
+    facebook: null,
+    category: "Mobile web games",
+    metaDescription:
+      "LarongPinoy case study: ten Filipino games for the phone, from Jeepney Rush to Patintero, that install like an app and play offline, built and run by Sumnora.",
+    headline: "Ten Filipino games that play without a signal.",
+    summary:
+      "LarongPinoy brings Filipino play to the phone: drive a jeepney through Manila, cross the patintero court, knock down the tumbang preso can, or build a halo-halo order. It installs like an app, works offline, and keeps a moderated leaderboard.",
+    stack: ["Next.js", "Three.js", "Phaser", "MySQL", "Hostinger"],
+    facts: [
+      ["10", "games, five 2D and five 3D"],
+      ["Offline", "installs and plays with no signal"],
+      ["21", "generated 3D models in the scenes"],
+    ],
+    highlights: [
+      {
+        title: "Games people grew up with",
+        text: "Patintero, piko, tumbang preso, and kanto basketball rebuilt for a phone screen, each with easy, normal, and hard modes that tighten as you play.",
+      },
+      {
+        title: "Plays with no signal",
+        text: "A service worker caches every game, model, and sound on the first visit. Scores save on the phone and upload when the connection returns.",
+      },
+      {
+        title: "Filipino streets in 3D",
+        text: "Sari-sari stores, karinderyas, palm trees, and karst islands are image-to-3D models generated with Microsoft TRELLIS.2, then optimized to a few hundred kilobytes each.",
+      },
+      {
+        title: "A leaderboard kept clean",
+        text: "Player names pass a public banned-word list, then an AI review covering Tagalog, Bisaya, and English slang. A name stays hidden until it is approved.",
+      },
+    ],
+    images: {
+      hero: { src: "/work/larongpinoy/home.webp", width: 2880, height: 1800, alt: "LarongPinoy home page with the headline “Laro tayo.” and the Jeepney Rush cover" },
+      gallery: { src: "/work/larongpinoy/play.webp", width: 2880, height: 1800, alt: "Basketball sa Kanto in play: a 3D neighborhood half court with on-screen controls" },
+      feature: { src: "/work/larongpinoy/games.webp", width: 2880, height: 1800, alt: "The LarongPinoy game library: ten illustrated covers with category filters" },
+      mobile: { src: "/work/larongpinoy/mobile.webp", width: 1170, height: 2532, alt: "Jeepney Rush on a phone: a jeepney on a Manila street with lane and brake controls" },
     },
   },
 ] as const;

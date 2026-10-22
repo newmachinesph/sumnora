@@ -109,12 +109,12 @@ export default function Home() {
           <h2>{kainna.name}</h2>
           <p>{kainna.summary}</p>
           <div>
-            <Link href="/work">Read the case study <ArrowUpRightIcon aria-hidden="true" size={16} weight="regular" /></Link>
+            <Link href={`/work/${kainna.slug}`}>Read the case study <ArrowUpRightIcon aria-hidden="true" size={16} weight="regular" /></Link>
             <a href={kainna.url} rel="noopener" target="_blank">Visit {kainna.url.replace("https://", "")} <ArrowUpRightIcon aria-hidden="true" size={16} weight="regular" /></a>
           </div>
         </Reveal>
         <Reveal className="home-work-image" delay={0.08}>
-          <Link aria-label={`${kainna.name} case study`} href="/work">
+          <Link aria-label={`${kainna.name} case study`} href={`/work/${kainna.slug}`}>
             <Image {...kainna.images.hero} sizes="(max-width: 1100px) calc(100vw - 48px), 60vw" />
           </Link>
         </Reveal>
