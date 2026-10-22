@@ -674,8 +674,10 @@ main:focus { outline: none; }
 .cinematic-cta h2 { max-width: 1030px; margin: 0; font: 430 clamp(58px, 7vw, 108px)/.93 var(--serif); letter-spacing: -.065em; }
 .cinematic-cta p { max-width: 600px; margin: 40px 0 0; color: var(--muted); font-size: 15px; line-height: 1.65; }
 
-.home-work { display: grid; grid-template-columns: .55fr 1.45fr; gap: 6vw; align-items: center; padding-top: 140px; padding-bottom: 140px; }
-.home-work-copy h2 { margin: 25px 0 22px; font: 430 clamp(48px, 5vw, 78px)/.96 var(--serif); letter-spacing: -.055em; }
+.home-work { display: grid; grid-template-columns: minmax(0, .55fr) minmax(0, 1.45fr); gap: 6vw; align-items: center; padding-top: 140px; padding-bottom: 140px; }
+/* Columns stay fixed; the title scales to the column so the longest name (FreeReviewer.ph, ~6.3em) fits. */
+.home-work-copy { container-type: inline-size; }
+.home-work-copy h2 { margin: 25px 0 22px; font: 430 clamp(36px, 15cqi, 78px)/.96 var(--serif); letter-spacing: -.055em; }
 .home-work-copy p { max-width: 440px; margin: 0 0 40px; color: var(--muted); font-size: 15px; line-height: 1.65; }
 .home-work-copy > div { display: flex; flex-wrap: wrap; gap: 14px 30px; }
 .home-work-copy a, .case-study-links a { width: max-content; display: flex; align-items: center; gap: 10px; padding-bottom: 5px; border-bottom: 1px solid; font-size: var(--text-compact); font-weight: 650; }
