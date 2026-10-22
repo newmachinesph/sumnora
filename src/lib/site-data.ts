@@ -432,6 +432,50 @@ export const caseStudies = [
       mobile: { src: "/work/barnesnest/mobile.webp", width: 1170, height: 2532, alt: "BarnesNest home page on a phone with the quote request form and service categories" },
     },
   },
+  {
+    slug: "freereviewer",
+    name: "FreeReviewer.ph",
+    url: "https://freereviewer.ph",
+    facebook: null,
+    appStore: null,
+    googlePlay: null,
+    category: "Education web app",
+    metaDescription:
+      "FreeReviewer.ph case study: free reviewers for 164 Philippine exams, from UPCAT to the board exams, with 5,183 original practice questions, built and run by Sumnora.",
+    headline: "Review for the exam you’re actually taking.",
+    summary:
+      "FreeReviewer.ph is a free review platform for Philippine exams, from college entrance through civil service, licensure and certification. Every guide links to the body that runs the exam, and learners practise with original questions that explain each answer.",
+    stack: ["Next.js", "MariaDB", "Upstash QStash", "Hostinger", "Cloudflare"],
+    facts: [
+      ["164", "exam guides with official sources"],
+      ["5,183", "original practice questions"],
+      ["₱0", "for every learner, no account needed"],
+    ],
+    highlights: [
+      {
+        title: "Every guide starts at the source",
+        text: "An exam is listed only after a current page from the regulator or school confirms it, and each guide links straight to that page for dates, fees and eligibility.",
+      },
+      {
+        title: "Original questions, reviewed twice",
+        text: "Each question is written for FreeReviewer.ph, then checked by an independent reviewer for the key, the explanation and give-away cues such as an answer longer than the rest.",
+      },
+      {
+        title: "Practice that feels like the answer sheet",
+        text: "Shade a bubble, check it, and read why. Missed questions come back on a spaced schedule, and practice and results stay free of ads.",
+      },
+      {
+        title: "The learner’s data stays theirs",
+        text: "Guests practise without an account, their progress merges when they sign up, and export and deletion work from the account page.",
+      },
+    ],
+    images: {
+      hero: { src: "/work/freereviewer/home.webp", width: 2880, height: 1800, alt: "FreeReviewer.ph home page with the headline “Review for the exam you’re actually taking.” and an answer-sheet illustration" },
+      gallery: { src: "/work/freereviewer/exams.webp", width: 2880, height: 1800, alt: "FreeReviewer.ph exam explorer listing college entrance exams with their question counts" },
+      feature: { src: "/work/freereviewer/practice.webp", width: 2880, height: 1800, alt: "A checked UPCAT practice question with the correct answer marked and an explanation below" },
+      mobile: { src: "/work/freereviewer/mobile.webp", width: 1170, height: 2532, alt: "The UPCAT exam guide on a phone with a Start free practice button" },
+    },
+  },
 ] as const;
 
 export const nav = [
