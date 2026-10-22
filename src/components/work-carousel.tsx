@@ -4,6 +4,7 @@ import { ArrowLeftIcon, ArrowRightIcon, ArrowUpRightIcon } from "@phosphor-icons
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { StoreBadges } from "@/components/store-badges";
 import { Reveal } from "@/components/motion";
 import { caseStudies } from "@/lib/site-data";
 
@@ -47,6 +48,7 @@ export function WorkCarousel() {
                 <Link href={`/work/${study.slug}`}>Read the case study <ArrowUpRightIcon aria-hidden="true" size={16} weight="regular" /></Link>
                 <a href={study.url} rel="noopener" target="_blank">Visit {study.url.replace("https://", "")} <ArrowUpRightIcon aria-hidden="true" size={16} weight="regular" /></a>
               </div>
+              <StoreBadges appStore={study.appStore} googlePlay={study.googlePlay} name={study.name} />
             </div>
             <div className="home-work-image">
               <Link aria-label={`${study.name} case study`} draggable={false} href={`/work/${study.slug}`}>

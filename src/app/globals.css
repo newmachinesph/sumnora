@@ -682,6 +682,10 @@ main:focus { outline: none; }
 .home-work-image a { display: block; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 24px 60px rgba(47,36,25,.08); }
 .home-work-image img { width: 100%; height: auto; display: block; transition: transform 1.2s var(--ease, cubic-bezier(.22,1,.36,1)); }
 .home-work-image a:hover img { transform: scale(1.012); }
+/* Store badges keep their official artwork and proportions; both render at the same 44px height. */
+div.store-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+div.store-badges a { display: block; width: auto; line-height: 0; border: 0; padding: 0; }
+.store-badges img { height: 44px; width: auto; }
 
 /* Homepage carousel: slides stack in one grid cell and crossfade; inactive slides are inert. */
 .work-carousel { padding-top: 32px; padding-bottom: 120px; touch-action: pan-y; }

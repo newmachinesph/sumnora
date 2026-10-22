@@ -2,6 +2,7 @@ import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
 import { CtaSection } from "@/components/cta-section";
+import { StoreBadges } from "@/components/store-badges";
 import { Reveal } from "@/components/motion";
 import { PageHero } from "@/components/page-hero";
 import { createPageMetadata } from "@/lib/seo";
@@ -10,7 +11,7 @@ import { caseStudies } from "@/lib/site-data";
 export const metadata = createPageMetadata({
   title: "Our Work",
   description:
-    "Products Sumnora has designed, built, and runs in production: Kain Na!, a Filipino recipe and meal-planning app, and LarongPinoy, ten Filipino games that play offline.",
+    "Products Sumnora has designed, built, and runs in production: Kain Na!, LarongPinoy, and BarnesNest, a US marketplace for verified home-service pros on web, iOS, and Android.",
   path: "/work",
 });
 
@@ -33,6 +34,7 @@ export default function WorkPage() {
               <Link href={`/work/${study.slug}`}>Read the case study <ArrowUpRightIcon aria-hidden="true" size={16} weight="regular" /></Link>
               <a href={study.url} rel="noopener" target="_blank">Visit {study.url.replace("https://", "")} <ArrowUpRightIcon aria-hidden="true" size={16} weight="regular" /></a>
             </div>
+            <StoreBadges appStore={study.appStore} googlePlay={study.googlePlay} name={study.name} />
           </Reveal>
           <Reveal className="home-work-image" delay={0.08}>
             <Link aria-label={`${study.name} case study`} href={`/work/${study.slug}`}>

@@ -3,6 +3,7 @@ import { ArrowUpRightIcon, FacebookLogoIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { CtaSection } from "@/components/cta-section";
+import { StoreBadges } from "@/components/store-badges";
 import { Reveal } from "@/components/motion";
 import { createPageMetadata } from "@/lib/seo";
 import { caseStudies } from "@/lib/site-data";
@@ -49,6 +50,7 @@ export default async function CaseStudyPage({ params }: Props) {
                 </a>
               )}
             </div>
+            <StoreBadges appStore={study.appStore} googlePlay={study.googlePlay} name={study.name} />
           </Reveal>
         </div>
 
