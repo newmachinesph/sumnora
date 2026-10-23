@@ -480,6 +480,51 @@ export const caseStudies = [
       mobile: { src: "/work/freereviewer/mobile.webp", width: 1170, height: 2532, alt: "The UPCAT exam guide on a phone with a Start free practice button" },
     },
   },
+  {
+    slug: "phriend",
+    name: "Phriend",
+    url: "https://phriend.app",
+    facebook: "https://facebook.com/phriendapp",
+    appStore: null,
+    googlePlay: "https://play.google.com/store/apps/details?id=app.phriend.mobile",
+    category: "Marketplace · web and mobile",
+    metaTitle: "Phriend: Philippine Local Services Marketplace Case Study",
+    metaDescription:
+      "Phriend case study: a Philippine marketplace for 51 kinds of local service from ID-verified providers, with in-app booking and chat and no commission, built by Sumnora.",
+    headline: "Local services, from verified providers.",
+    summary:
+      "Phriend is a marketplace for local services across the Philippines, from aircon cleaning and bookkeeping to tutoring, photo and video, and errands. Clients compare services by price and photos of the work, book and chat in the app, and pay the provider directly.",
+    stack: ["Next.js", "Expo", "NestJS", "PostgreSQL", "Cloudflare R2"],
+    facts: [
+      ["51", "kinds of service in 18 groups"],
+      ["₱0", "commission, providers keep 100%"],
+      ["2", "apps: one to book, one to run a business"],
+    ],
+    highlights: [
+      {
+        title: "Services, not profiles",
+        text: "The listing is the service, not the person. Each one carries its own price per job, hour or session, up to six photos of the work, a visit type, a schedule and the area it covers.",
+      },
+      {
+        title: "Verified before they list",
+        text: "Every provider passes a government ID and selfie check. NBI and police clearances, barangay certificates and business documents each earn a badge, and every listing is checked before it goes live.",
+      },
+      {
+        title: "Moderation that runs itself",
+        text: "AI reviews photos, documents, listings, reviews and reports against confidence thresholds. Only the uncertain cases reach a person, in one Ops queue where any decision can be overridden.",
+      },
+      {
+        title: "Private until booked",
+        text: "A provider sees only the client’s area and city until they accept a booking. ID documents stay private, file views are audited, and rejected files are deleted after 30 days.",
+      },
+    ],
+    images: {
+      hero: { src: "/work/phriend/home.webp", width: 2880, height: 1800, alt: "Phriend home page with the headline “Local services, from verified providers” beside the app on a phone" },
+      gallery: { src: "/work/phriend/services.webp", width: 2880, height: 1800, alt: "Phriend services directory: service groups with photos and the categories in each" },
+      feature: { src: "/work/phriend/occasions.webp", width: 2880, height: 1800, alt: "Phriend occasions page with guides for a wedding, a prenup shoot and a debut" },
+      mobile: { src: "/work/phriend/mobile.webp", width: 1170, height: 2532, alt: "Phriend home page on a phone with Book a service and List your services buttons" },
+    },
+  },
 ] as const;
 
 export const nav = [
