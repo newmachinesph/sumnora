@@ -486,7 +486,7 @@ export const caseStudies = [
     url: "https://phriend.app",
     facebook: "https://facebook.com/phriendapp",
     appStore: null,
-    googlePlay: "https://play.google.com/store/apps/details?id=app.phriend.mobile",
+    googlePlay: null,
     category: "Marketplace · web and mobile",
     metaTitle: "Phriend: Philippine Local Services Marketplace Case Study",
     metaDescription:
