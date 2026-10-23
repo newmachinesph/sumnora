@@ -1,16 +1,19 @@
 import { CtaSection } from "@/components/cta-section";
+import { JsonLd } from "@/components/json-ld";
 import { IconCardGrid } from "@/components/icon-card-grid";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
-import { createPageMetadata } from "@/lib/seo";
+import { createPageMetadata, pageJsonLd } from "@/lib/seo";
 import { practiceCapabilities, principles } from "@/lib/site-data";
 
-export const metadata = createPageMetadata({
-  title: "How We Build",
+const page = {
+  title: "How We Build Software with AI",
   description:
-    "An AI-native engineering practice: discovery, architecture, delivery pipelines, evaluation, and a handover your team can actually run.",
+    "Models draft much of our code; an engineer reviews every change before it ships. How Sumnora runs discovery, delivery, testing and the handover to your team.",
   path: "/approach",
-});
+};
+
+export const metadata = createPageMetadata(page);
 
 const deliveryStages = [
   {
@@ -44,6 +47,7 @@ const boundaries = [practiceCapabilities[5], practiceCapabilities[6]] as const;
 export default function ApproachPage() {
   return (
     <>
+      <JsonLd data={pageJsonLd({ ...page, trail: [["Approach", page.path]] })} />
       <PageHero
         eyebrow="HOW WE BUILD"
         title="AI accelerates. Engineers decide."

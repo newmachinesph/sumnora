@@ -22,7 +22,7 @@ export const services = [
     name: "Product Engineering",
     metaTitle: "Product Engineering Services | Sumnora",
     metaDescription:
-      "Design and build production web and mobile products — architecture, interface, backend, testing, and the release process that keeps them shipping.",
+      "We design and build production web and mobile apps: architecture, interface, backend, tests and the release pipeline. First release in 6 to 12 weeks.",
     short: "Ship production software, not prototypes.",
     headline: "From an idea to a product in production.",
     description:
@@ -108,7 +108,7 @@ export const services = [
     name: "Automation & Integration",
     metaTitle: "Workflow Automation & System Integration | Sumnora",
     metaDescription:
-      "Replace manual handoffs with connected systems — internal tools, workflow automation, and integrations between the software you already run.",
+      "Internal tools, scheduled jobs and integrations between the software you already pay for, built in 3 to 8 weeks so routine work runs on its own.",
     short: "Connect the systems your team fights daily.",
     headline: "Turn manual routine into running systems.",
     description:
@@ -308,6 +308,7 @@ export const caseStudies = [
     appStore: null,
     googlePlay: null,
     category: "Consumer web app",
+    metaTitle: "Kain Na!: Filipino Meal Planning App Case Study",
     metaDescription:
       "Kain Na! case study: a Filipino recipe and meal-planning app with 1,700 dishes, budget-aware weekly plans, and one market list, built and run by Sumnora.",
     headline: "A seat at the table for every ulam.",
@@ -352,6 +353,7 @@ export const caseStudies = [
     appStore: null,
     googlePlay: null,
     category: "Mobile web games",
+    metaTitle: "LarongPinoy: Offline Filipino Games Case Study",
     metaDescription:
       "LarongPinoy case study: ten Filipino games for the phone, from Jeepney Rush to Patintero, that install like an app and play offline, built and run by Sumnora.",
     headline: "Ten Filipino games that play without a signal.",
@@ -396,6 +398,7 @@ export const caseStudies = [
     appStore: "https://apps.apple.com/gb/app/barnesnest/id6784006599",
     googlePlay: "https://play.google.com/store/apps/details?id=com.barnesnest.app",
     category: "Marketplace · web, iOS and Android",
+    metaTitle: "BarnesNest: Home Services Marketplace Case Study",
     metaDescription:
       "BarnesNest case study: a US marketplace for verified local home-service pros with milestone payments, hourly booking, and iOS and Android apps, built by Sumnora.",
     headline: "Book trusted pros for everything under your roof.",
@@ -440,6 +443,7 @@ export const caseStudies = [
     appStore: null,
     googlePlay: null,
     category: "Education web app",
+    metaTitle: "FreeReviewer.ph: Philippine Exam Reviewer Case Study",
     metaDescription:
       "FreeReviewer.ph case study: free reviewers for 164 Philippine exams, from UPCAT to the board exams, with 5,183 original practice questions, built and run by Sumnora.",
     headline: "Review for the exam you’re actually taking.",

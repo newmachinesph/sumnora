@@ -1,23 +1,27 @@
 import { CheckIcon } from "@phosphor-icons/react/ssr";
 import { CtaSection } from "@/components/cta-section";
 import { PageHero } from "@/components/page-hero";
+import { JsonLd } from "@/components/json-ld";
 import { Reveal } from "@/components/motion";
 import { WorkflowRail } from "@/components/workflow-rail";
-import { createPageMetadata } from "@/lib/seo";
+import { createPageMetadata, pageJsonLd } from "@/lib/seo";
 import { audiences } from "@/lib/site-data";
 
-export const metadata = createPageMetadata({
-  title: "Who We Build For",
+const page = {
+  title: "Software for Founders, Scale-ups and Enterprise Teams",
   description:
-    "Sumnora works with founders, scale-ups, enterprise teams, and operators who need software without running an engineering department.",
+    "Founders shipping a first product, scale-ups short on senior engineers, enterprise teams with procurement to clear, and operators with no engineering team.",
   path: "/solutions",
-});
+};
+
+export const metadata = createPageMetadata(page);
 
 const handoff = ["Problem", "Scope", "Design", "Build", "Review", "Handover"];
 
 export default function SolutionsPage() {
   return (
     <>
+      <JsonLd data={pageJsonLd({ ...page, trail: [["Solutions", page.path]] })} />
       <PageHero
         title="Built around where you actually are."
         description="A first product and a fifth platform migration need different things from an engineering partner. The practice stays the same; the shape of the engagement does not."

@@ -10,7 +10,7 @@ import { Reveal, StaggerItem, StaggerList } from "@/components/motion";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceVectorVisual } from "@/components/service-vector-visual";
 import { WorkflowRail } from "@/components/workflow-rail";
-import { createPageMetadata, SITE_URL } from "@/lib/seo";
+import { createPageMetadata, pageJsonLd, SITE_URL } from "@/lib/seo";
 import { services } from "@/lib/site-data";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -38,19 +38,13 @@ export default async function ServicePage({ params }: Props) {
   if (!service) notFound();
   const style = { "--product-accent": service.accent } as CSSProperties;
   const canonicalUrl = `${SITE_URL}/services/${service.slug}`;
-  const serviceJsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": `${canonicalUrl}#webpage`,
-        url: canonicalUrl,
-        name: service.metaTitle,
-        description: service.metaDescription,
-        inLanguage: "en-PH",
-        isPartOf: { "@id": `${SITE_URL}/#website` },
-        about: { "@id": `${canonicalUrl}#service` },
-      },
+  const serviceJsonLd = pageJsonLd({
+    title: service.metaTitle,
+    description: service.metaDescription,
+    path: `/services/${service.slug}`,
+    trail: [["Services", "/services"], [service.name, `/services/${service.slug}`]],
+    page: { about: { "@id": `${canonicalUrl}#service` } },
+    nodes: [
       {
         "@type": "Service",
         "@id": `${canonicalUrl}#service`,
@@ -59,9 +53,17 @@ export default async function ServicePage({ params }: Props) {
         url: canonicalUrl,
         serviceType: service.name,
         provider: { "@id": `${SITE_URL}/#organization` },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: `${service.name} capabilities`,
+          itemListElement: service.capabilities.map((capability) => ({
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: capability.name, description: capability.text },
+          })),
+        },
       },
     ],
-  };
+  });
 
   return (
     <div className="product-detail" style={style}>

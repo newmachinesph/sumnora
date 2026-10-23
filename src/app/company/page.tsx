@@ -2,15 +2,18 @@ import Image from "next/image";
 import { CtaSection } from "@/components/cta-section";
 import { FactRail } from "@/components/fact-rail";
 import { PageHero } from "@/components/page-hero";
+import { JsonLd } from "@/components/json-ld";
 import { Reveal } from "@/components/motion";
-import { createPageMetadata } from "@/lib/seo";
+import { createPageMetadata, pageJsonLd, SITE_URL } from "@/lib/seo";
 
-export const metadata = createPageMetadata({
-  title: "Company",
+const page = {
+  title: "About Sumnora, a Software Studio in the Philippines",
   description:
-    "Sumnora is an AI-native software development boutique built in the Philippines, working with product teams anywhere.",
+    "Sumnora is a small software studio in the Philippines. The engineers who scope your project are the ones who build it, and AI drafts code that a person reviews.",
   path: "/company",
-});
+};
+
+export const metadata = createPageMetadata(page);
 
 const facts = [
   { term: "Company", value: "Software studio" },
@@ -22,6 +25,7 @@ const facts = [
 export default function CompanyPage() {
   return (
     <>
+      <JsonLd data={pageJsonLd({ ...page, type: "AboutPage", trail: [["Company", page.path]], page: { about: { "@id": `${SITE_URL}/#organization` } } })} />
       <PageHero
         title="A small team that ships."
         description="We build software for the people who have to live with it afterwards — founders, product teams, and operators who need working systems rather than more headcount."

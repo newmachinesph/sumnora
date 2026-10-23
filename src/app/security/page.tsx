@@ -9,17 +9,20 @@ import {
 import { ButtonLink } from "@/components/button-link";
 import { CheckList } from "@/components/check-list";
 import { IconCardGrid } from "@/components/icon-card-grid";
+import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/motion";
 import { SectionHeading } from "@/components/section-heading";
-import { createPageMetadata } from "@/lib/seo";
+import { createPageMetadata, pageJsonLd } from "@/lib/seo";
 
-export const metadata = createPageMetadata({
-  title: "Trust & Security",
+const page = {
+  title: "Trust & Security: How We Handle Your Code and Data",
   description:
-    "How Sumnora handles client code, credentials, and data — access control, engineering practice, operational resilience, and disclosed use of AI.",
+    "How Sumnora handles client code, credentials and data: least-privilege access, peer-reviewed changes, tested backups, and the rules we follow when we use AI.",
   path: "/security",
-});
+};
+
+export const metadata = createPageMetadata(page);
 
 const controls = [
   {
@@ -54,6 +57,7 @@ const aiRules = [
 export default function SecurityPage() {
   return (
     <>
+      <JsonLd data={pageJsonLd({ ...page, trail: [["Trust & Security", page.path]] })} />
       <PageHero
         eyebrow="TRUST & SECURITY"
         title="Trust is a system property."

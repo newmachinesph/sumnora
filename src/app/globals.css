@@ -438,6 +438,11 @@ main:focus { outline: none; }
 .process-grid span { color: var(--vermillion); font-size: var(--text-micro); }
 .process-grid h3 { margin: auto 0 17px; font: 460 30px/1 var(--serif); }
 .process-grid p { margin: 0; color: var(--muted); font-size: var(--text-small); line-height: 1.6; }
+.faq-section { padding-bottom: 0; }
+.faq-list { border-top: 1px solid var(--line); }
+.faq-list > div { padding: 26px 0 28px; border-bottom: 1px solid var(--line); }
+.faq-list h3 { margin: 0 0 12px; font: 430 22px/1.25 var(--serif); }
+.faq-list p { max-width: 640px; margin: 0; color: var(--muted); font-size: var(--text-small); line-height: 1.6; }
 .apply-section { display: grid; grid-template-columns: 1.1fr .75fr; gap: 9vw; align-items: stretch; padding-top: 125px; padding-bottom: 135px; }
 .apply-copy h2 { max-width: 730px; margin: 30px 0; font: 430 clamp(54px, 6vw, 94px)/.95 var(--serif); letter-spacing: -.06em; }
 .apply-copy p { max-width: 590px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.65; }

@@ -1,15 +1,18 @@
 import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import { PageHero } from "@/components/page-hero";
+import { JsonLd } from "@/components/json-ld";
 import { Reveal } from "@/components/motion";
-import { createPageMetadata } from "@/lib/seo";
+import { createPageMetadata, pageJsonLd } from "@/lib/seo";
 import { CONTACT_EMAIL } from "@/lib/site-data";
 
-export const metadata = createPageMetadata({
-  title: "Contact",
+const page = {
+  title: "Contact Sumnora | Start a Software Project",
   description:
-    "Contact Sumnora about a software project, an engineering partnership, security questions, or company matters. One address: hello@sumnora.com.",
+    "Email hello@sumnora.com about a software project, a security question or anything else. A person who would do the work replies within two business days.",
   path: "/contact",
-});
+};
+
+export const metadata = createPageMetadata({ ...page, absoluteTitle: page.title });
 
 const guidance = [
   {
@@ -29,6 +32,7 @@ const guidance = [
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={pageJsonLd({ ...page, type: "ContactPage", trail: [["Contact", page.path]] })} />
       <PageHero
         compact
         title="Start with the problem in front of you."

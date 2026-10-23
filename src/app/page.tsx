@@ -4,54 +4,14 @@ import Link from "next/link";
 import { ButtonLink } from "@/components/button-link";
 import { CtaSection } from "@/components/cta-section";
 import { AssuranceMotion, HeroMotionOverlay, ProductMotionShowcase } from "@/components/enterprise-visuals";
-import { JsonLd } from "@/components/json-ld";
 import { Reveal } from "@/components/motion";
 import { SectionHeading } from "@/components/section-heading";
-import { CONTACT_EMAIL, services } from "@/lib/site-data";
+import { services } from "@/lib/site-data";
 import { WorkCarousel } from "@/components/work-carousel";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
-
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "ProfessionalService",
-      "@id": `${SITE_URL}/#organization`,
-      name: SITE_NAME,
-      url: SITE_URL,
-      description: SITE_DESCRIPTION,
-      email: CONTACT_EMAIL,
-      areaServed: { "@type": "Country", name: "Philippines" },
-      knowsAbout: [
-        "Software development",
-        "Artificial intelligence engineering",
-        "Workflow automation",
-        "Platform engineering",
-      ],
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/brand/sumnora-icon-512.png`,
-        contentUrl: `${SITE_URL}/brand/sumnora-icon-512.png`,
-        width: 512,
-        height: 512,
-      },
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${SITE_URL}/#website`,
-      url: SITE_URL,
-      name: SITE_NAME,
-      description: SITE_DESCRIPTION,
-      inLanguage: "en-PH",
-      publisher: { "@id": `${SITE_URL}/#organization` },
-    },
-  ],
-};
 
 export default function Home() {
   return (
     <>
-      <JsonLd data={organizationJsonLd} />
       <section className="enterprise-home-hero section-shell">
         <div className="enterprise-hero-copy">
           <Reveal>

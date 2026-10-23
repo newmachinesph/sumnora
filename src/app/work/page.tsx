@@ -2,22 +2,45 @@ import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
 import { CtaSection } from "@/components/cta-section";
+import { JsonLd } from "@/components/json-ld";
 import { StoreBadges } from "@/components/store-badges";
 import { Reveal } from "@/components/motion";
 import { PageHero } from "@/components/page-hero";
-import { createPageMetadata } from "@/lib/seo";
+import { createPageMetadata, pageJsonLd, SITE_URL } from "@/lib/seo";
 import { caseStudies } from "@/lib/site-data";
 
-export const metadata = createPageMetadata({
-  title: "Our Work",
-  description:
-    "Products Sumnora has designed, built, and runs in production: Kain Na!, LarongPinoy, and BarnesNest, a US marketplace for verified home-service pros on web, iOS, and Android.",
+// Names come from the data so a new case study can't be left out of the description.
+const studyNames = new Intl.ListFormat("en", { type: "conjunction" }).format(caseStudies.map((study) => study.name));
+
+const page = {
+  title: "Our Work: Web and Mobile Apps in Production",
+  description: `Case studies of products Sumnora designed and built: ${studyNames}, with screenshots, the stack and the numbers behind each.`,
   path: "/work",
+};
+
+export const metadata = createPageMetadata(page);
+
+const workJsonLd = pageJsonLd({
+  ...page,
+  type: "CollectionPage",
+  trail: [["Work", page.path]],
+  page: {
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: caseStudies.map((study, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: study.metaTitle,
+        url: `${SITE_URL}/work/${study.slug}`,
+      })),
+    },
+  },
 });
 
 export default function WorkPage() {
   return (
     <>
+      <JsonLd data={workJsonLd} />
       <PageHero
         eyebrow="SELECTED WORK"
         title="Software in production, not in a deck."

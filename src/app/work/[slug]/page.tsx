@@ -3,9 +3,10 @@ import { ArrowUpRightIcon, FacebookLogoIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { CtaSection } from "@/components/cta-section";
+import { JsonLd } from "@/components/json-ld";
 import { StoreBadges } from "@/components/store-badges";
 import { Reveal } from "@/components/motion";
-import { createPageMetadata } from "@/lib/seo";
+import { createPageMetadata, pageJsonLd, SITE_URL } from "@/lib/seo";
 import { caseStudies } from "@/lib/site-data";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -20,7 +21,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const study = caseStudies.find((item) => item.slug === slug);
   return study
-    ? createPageMetadata({ title: `${study.name} case study`, description: study.metaDescription, path: `/work/${study.slug}` })
+    ? createPageMetadata({
+        title: study.metaTitle,
+        description: study.metaDescription,
+        path: `/work/${study.slug}`,
+        image: study.images.hero,
+      })
     : {};
 }
 
@@ -28,9 +34,38 @@ export default async function CaseStudyPage({ params }: Props) {
   const { slug } = await params;
   const study = caseStudies.find((item) => item.slug === slug);
   if (!study) notFound();
+  const path = `/work/${study.slug}`;
+  const caseStudyId = `${SITE_URL}${path}#casestudy`;
+  const caseStudyJsonLd = pageJsonLd({
+    title: study.metaTitle,
+    description: study.metaDescription,
+    path,
+    trail: [["Work", "/work"], [study.name, path]],
+    page: { mainEntity: { "@id": caseStudyId }, primaryImageOfPage: `${SITE_URL}${study.images.hero.src}` },
+    nodes: [
+      {
+        "@type": "CreativeWork",
+        "@id": caseStudyId,
+        name: study.metaTitle,
+        headline: study.headline,
+        abstract: study.summary,
+        genre: "Case study",
+        image: Object.values(study.images).map((image) => `${SITE_URL}${image.src}`),
+        creator: { "@id": `${SITE_URL}/#organization` },
+        keywords: study.stack.join(", "),
+        about: {
+          "@type": "WebSite",
+          name: study.name,
+          url: study.url,
+          sameAs: [study.facebook, study.appStore, study.googlePlay].filter(Boolean),
+        },
+      },
+    ],
+  });
 
   return (
     <>
+      <JsonLd data={caseStudyJsonLd} />
       <article className="case-study" id={study.slug}>
         <div className="section-shell case-study-head">
           <Reveal>
