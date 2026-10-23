@@ -301,6 +301,51 @@ export const principles = [
 
 export const caseStudies = [
   {
+    slug: "barnesnest",
+    name: "BarnesNest",
+    url: "https://barnesnest.com",
+    facebook: null,
+    appStore: "https://apps.apple.com/gb/app/barnesnest/id6784006599",
+    googlePlay: "https://play.google.com/store/apps/details?id=com.barnesnest.app",
+    category: "Marketplace · web, iOS and Android",
+    metaTitle: "BarnesNest: Home Services Marketplace Case Study",
+    metaDescription:
+      "BarnesNest case study: a US marketplace for verified local home-service pros with milestone payments, hourly booking, and iOS and Android apps, built by Sumnora.",
+    headline: "Book trusted pros for everything under your roof.",
+    summary:
+      "BarnesNest connects US homeowners with verified local pros for cleaning, plumbing, roofing, and more. Homeowners compare free quotes and pay in milestones that are released only after they approve the work, on the web or in the iOS and Android apps.",
+    stack: ["Next.js", "iOS", "Android", "Stripe Connect"],
+    facts: [
+      ["14,000+", "pros listed across the US"],
+      ["12", "service categories, from cleaning to roofing"],
+      ["3", "platforms: web, iOS, and Android"],
+    ],
+    highlights: [
+      {
+        title: "Paid only after approval",
+        text: "Each stage of a job is funded into a milestone account and released to the pro only when the homeowner approves the work, with completion photos attached.",
+      },
+      {
+        title: "Pros checked before they work",
+        text: "Every pro completes identity verification. Licensed trades have their license numbers checked with the state, and insurance certificates are kept on file.",
+      },
+      {
+        title: "Hourly booking with a live timer",
+        text: "Cleaning, handyman, and lawn-care pros can be booked by the hour. A server-timed clock records the work, and the homeowner reviews the time before paying.",
+      },
+      {
+        title: "Disputes with a paper trail",
+        text: "A dispute freezes that milestone's payout while both sides are heard, and the in-app messages are kept as the record of what was agreed.",
+      },
+    ],
+    images: {
+      hero: { src: "/work/barnesnest/home.webp", width: 2880, height: 1800, alt: "BarnesNest home page with the headline “Book trusted pros for everything under your roof.” and a quote request box" },
+      gallery: { src: "/work/barnesnest/how.webp", width: 2880, height: 1800, alt: "BarnesNest How it works page: post a job, compare quotes, one clear price" },
+      feature: { src: "/work/barnesnest/search.webp", width: 2880, height: 1800, alt: "BarnesNest Find a pro search with trade filters and profile cards of local pros" },
+      mobile: { src: "/work/barnesnest/mobile.webp", width: 1170, height: 2532, alt: "BarnesNest home page on a phone with the quote request form and service categories" },
+    },
+  },
+  {
     slug: "kainna",
     name: "Kain Na!",
     url: "https://kainna.ph",
@@ -388,51 +433,6 @@ export const caseStudies = [
       gallery: { src: "/work/larongpinoy/play.webp", width: 2880, height: 1800, alt: "Basketball sa Kanto in play: a 3D neighborhood half court with on-screen controls" },
       feature: { src: "/work/larongpinoy/games.webp", width: 2880, height: 1800, alt: "The LarongPinoy game library: ten illustrated covers with category filters" },
       mobile: { src: "/work/larongpinoy/mobile.webp", width: 1170, height: 2532, alt: "Jeepney Rush on a phone: a jeepney on a Manila street with lane and brake controls" },
-    },
-  },
-  {
-    slug: "barnesnest",
-    name: "BarnesNest",
-    url: "https://barnesnest.com",
-    facebook: null,
-    appStore: "https://apps.apple.com/gb/app/barnesnest/id6784006599",
-    googlePlay: "https://play.google.com/store/apps/details?id=com.barnesnest.app",
-    category: "Marketplace · web, iOS and Android",
-    metaTitle: "BarnesNest: Home Services Marketplace Case Study",
-    metaDescription:
-      "BarnesNest case study: a US marketplace for verified local home-service pros with milestone payments, hourly booking, and iOS and Android apps, built by Sumnora.",
-    headline: "Book trusted pros for everything under your roof.",
-    summary:
-      "BarnesNest connects US homeowners with verified local pros for cleaning, plumbing, roofing, and more. Homeowners compare free quotes and pay in milestones that are released only after they approve the work, on the web or in the iOS and Android apps.",
-    stack: ["Next.js", "iOS", "Android", "Stripe Connect"],
-    facts: [
-      ["14,000+", "pros listed across the US"],
-      ["12", "service categories, from cleaning to roofing"],
-      ["3", "platforms: web, iOS, and Android"],
-    ],
-    highlights: [
-      {
-        title: "Paid only after approval",
-        text: "Each stage of a job is funded into a milestone account and released to the pro only when the homeowner approves the work, with completion photos attached.",
-      },
-      {
-        title: "Pros checked before they work",
-        text: "Every pro completes identity verification. Licensed trades have their license numbers checked with the state, and insurance certificates are kept on file.",
-      },
-      {
-        title: "Hourly booking with a live timer",
-        text: "Cleaning, handyman, and lawn-care pros can be booked by the hour. A server-timed clock records the work, and the homeowner reviews the time before paying.",
-      },
-      {
-        title: "Disputes with a paper trail",
-        text: "A dispute freezes that milestone's payout while both sides are heard, and the in-app messages are kept as the record of what was agreed.",
-      },
-    ],
-    images: {
-      hero: { src: "/work/barnesnest/home.webp", width: 2880, height: 1800, alt: "BarnesNest home page with the headline “Book trusted pros for everything under your roof.” and a quote request box" },
-      gallery: { src: "/work/barnesnest/how.webp", width: 2880, height: 1800, alt: "BarnesNest How it works page: post a job, compare quotes, one clear price" },
-      feature: { src: "/work/barnesnest/search.webp", width: 2880, height: 1800, alt: "BarnesNest Find a pro search with trade filters and profile cards of local pros" },
-      mobile: { src: "/work/barnesnest/mobile.webp", width: 1170, height: 2532, alt: "BarnesNest home page on a phone with the quote request form and service categories" },
     },
   },
   {
