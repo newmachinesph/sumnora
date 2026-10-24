@@ -525,6 +525,51 @@ export const caseStudies = [
       mobile: { src: "/work/phriend/mobile.webp", width: 1170, height: 2532, alt: "Phriend home page on a phone with Book a service and List your services buttons" },
     },
   },
+  {
+    slug: "kyprewards",
+    name: "KYP Rewards",
+    url: "https://kyprewards.com",
+    facebook: null,
+    appStore: null,
+    googlePlay: null,
+    category: "Loyalty SaaS · web and mobile",
+    metaTitle: "KYP Rewards: Digital Stamp Card App Case Study",
+    metaDescription:
+      "KYP Rewards case study: digital stamp cards and points for Philippine cafés, salons and sari-sari stores, stamped from any browser and billed in pesos, built by Sumnora.",
+    headline: "Stamp cards your regulars won’t lose.",
+    summary:
+      "KYP Rewards replaces paper stamp cards for small shops in the Philippines, from cafés and bakeries to salons, laundries and sari-sari stores. Shoppers keep every card in one free app, and staff give stamps or points from the browser already at the counter.",
+    stack: ["Next.js", "Cloudflare Workers", "Cloudflare R2", "PayMongo"],
+    facts: [
+      ["0", "hardware to buy, the counter runs in a browser"],
+      ["4", "ways to find a shopper at the counter"],
+      ["3 months", "free on one branch, then billed in pesos"],
+    ],
+    highlights: [
+      {
+        title: "Stamps or points, one per shop",
+        text: "A café runs a stamp card of 2 to 30 stamps with an optional minimum spend. A salon earns points at its own rate, such as 1 point per ₱10, against a menu of rewards.",
+      },
+      {
+        title: "A counter with no hardware",
+        text: "Staff open the counter on any phone, tablet or laptop and find the shopper by rotating QR code, member code or email, or the shopper scans the branch QR. One tap adds the stamp.",
+      },
+      {
+        title: "Built against misuse",
+        text: "Staff see only their own branch and can undo their last entry within five minutes. Daily stamp limits, a full history and shopper confirmation on code or email lookups keep the card honest.",
+      },
+      {
+        title: "Regulars hear when it counts",
+        text: "Shoppers get a push notification when a reward is ready and a week before anything expires. Shops send push announcements within a monthly quota, with no SMS or marketing email.",
+      },
+    ],
+    images: {
+      hero: { src: "/work/kyprewards/home.webp", width: 2880, height: 1800, alt: "KYP Rewards home page with the headline “Stamp cards your regulars won’t lose.” and a stamp card beside a café counter" },
+      gallery: { src: "/work/kyprewards/how.webp", width: 2880, height: 1800, alt: "KYP Rewards How it works: set up your card, stamp at the counter, regulars come back" },
+      feature: { src: "/work/kyprewards/pricing.webp", width: 2880, height: 1800, alt: "KYP Rewards pricing: a free three-month trial and the Standard plan at ₱799 a month" },
+      mobile: { src: "/work/kyprewards/mobile.webp", width: 1170, height: 2532, alt: "KYP Rewards home page on a phone with Start your free trial and See pricing buttons" },
+    },
+  },
 ] as const;
 
 export const nav = [
